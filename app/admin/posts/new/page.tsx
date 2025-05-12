@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
-import { useAuth } from '../../../../components/AuthProvider'
+import { useAuth } from '@/app/components/AuthProvider'
 
 interface Post {
   title: string
