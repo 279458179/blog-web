@@ -14,7 +14,8 @@ interface Post {
   readTime: string
 }
 
-export default function EditPostPage({ params }: { params: { id: string } }) {
+export default function EditPostPage(props: any) {
+  const { params } = props
   const [post, setPost] = useState<Post | null>(null)
   const [loading, setLoading] = useState(true)
   const [saving, setSaving] = useState(false)
