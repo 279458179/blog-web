@@ -14,12 +14,7 @@ interface Post {
   readTime: string
 }
 
-interface PageProps {
-  params: { id: string }
-  searchParams?: { [key: string]: string | string[] }
-}
-
-export default function EditPostPage({ params }: PageProps) {
+export default function EditPostPage({ params }: { params: { id: string } }) {
   const [post, setPost] = useState<Post | null>(null)
   const [loading, setLoading] = useState(true)
   const [saving, setSaving] = useState(false)
