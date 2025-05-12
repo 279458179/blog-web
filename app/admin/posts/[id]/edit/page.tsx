@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
-import { useAuth } from '../../../../components/AuthProvider'
+import { useAuth } from '@/app/components/AuthProvider'
 
 interface Post {
   id: number
@@ -14,7 +14,12 @@ interface Post {
   readTime: string
 }
 
-export default function EditPostPage({ params }: { params: { id: string } }) {
+interface PageProps {
+  params: { id: string }
+  searchParams?: { [key: string]: string | string[] }
+}
+
+export default function EditPostPage({ params }: PageProps) {
   const [post, setPost] = useState<Post | null>(null)
   const [loading, setLoading] = useState(true)
   const [saving, setSaving] = useState(false)
